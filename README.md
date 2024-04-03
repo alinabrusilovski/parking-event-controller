@@ -1,2 +1,2 @@
 # parking-control-application
-Parking control repository for microservice application
+Common repository for parking control microservices application
