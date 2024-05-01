@@ -27,11 +27,11 @@ public class ParkingEventApplication {
 	@Autowired
 	StreamBridge sb;
 
-	@Value("${app.event.producer.binding.name:sendParkingData-out-0}")
+	@Value("${app.event.producer.binding.name:processParkingEvent-out-0}")
 	String bindingName;
 
 	@Bean
-	Consumer<ParkingEventDto> processParkingEvent() {
+	Consumer<ParkingEventDto> sendParkingData() {
 		return (eventDto) -> {
 			if (eventDto != null) {
 					ParkingEventDto event = service.processParkingEvent(eventDto);

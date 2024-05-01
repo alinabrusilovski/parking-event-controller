@@ -37,13 +37,11 @@ public class ParkingEventTest {
 	@Autowired
 	OutputDestination consumer;
 	
-	private String consumerBindingName = "processParkingEvent-in-0";
-	private String producerBindingName = "sendParkingData-out-0";
+	private String consumerBindingName = "sendParkingData-in-0";
+	private String producerBindingName = "processParkingEvent-out-0";
 
 	@MockBean
 	ParkingEventRepository repo;
-
-//	private ParkingEventDto previousEventDto;
 
 	ParkingEventDto parkingEventDto = new ParkingEventDto(PARKING_ID, CAR_REG_NUMBER, TIMESTAMP);
 	ParkingEventDto droveAwayEventDto = new ParkingEventDto(PARKING_ID, null, TIMESTAMP);
@@ -115,16 +113,5 @@ public class ParkingEventTest {
 		assertNull(redisMap.get(PARKING_ID));
 
 	}
-
-//	@Test
-//	void testTheSameEvent() {
-//		if (previousEventDto != null && parkingEventDto.carRegNumber().equals(previousEventDto.carRegNumber())) {
-//
-//			producer.send(new GenericMessage<ParkingEventDto>(droveAwayEventDto), consumerBindingName);
-//			Message<byte[]> message = consumer.receive(0, producerBindingName);
-//			assertNotNull(message);
-//		}
-//
-//	}
 
 }
