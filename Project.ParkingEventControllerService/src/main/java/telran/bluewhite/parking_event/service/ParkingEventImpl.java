@@ -4,8 +4,6 @@ import java.util.NoSuchElementException;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.cloud.stream.function.StreamBridge;
-import org.springframework.context.ApplicationContext;
 
 import telran.bluewhite.parking_event.entity.ParkingEvent;
 import telran.bluewhite.parking_event.repository.ParkingEventRepository;

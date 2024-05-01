@@ -36,9 +36,9 @@ public class ParkingEventTest {
 	InputDestination producer;
 	@Autowired
 	OutputDestination consumer;
-
+	
 	private String consumerBindingName = "processParkingEvent-in-0";
-	private String producerBindingName = "processParkingEvent-out-0";
+	private String producerBindingName = "sendParkingData-out-0";
 
 	@MockBean
 	ParkingEventRepository repo;
