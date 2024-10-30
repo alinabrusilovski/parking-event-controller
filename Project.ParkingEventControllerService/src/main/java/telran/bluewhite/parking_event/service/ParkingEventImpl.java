@@ -23,10 +23,10 @@ public class ParkingEventImpl implements IParkingEvent {
 	@SuppressWarnings("null")
 	public ParkingEventDto processParkingEvent(ParkingEventDto parkingEventDto) throws NoSuchElementException {
 
-		if (parkingEventDto == null) {
-			log.debug("Parking event with ID {} is null", parkingEventDto.parkingId());
-			throw new IllegalArgumentException("Parking event DTO cannot be null");
-		}
+//		if (parkingEventDto == null) {
+//			log.debug("Parking event with ID {} is null", parkingEventDto.parkingId());
+//			throw new IllegalArgumentException("Parking event DTO cannot be null");
+//		}
 
 		// !existingEvent.isPresent()
 		Optional<ParkingEvent> existingEvent = repository.findById(parkingEventDto.parkingId());
@@ -57,6 +57,7 @@ public class ParkingEventImpl implements IParkingEvent {
 //
 //		}
 
+			
 	}
 
 }
